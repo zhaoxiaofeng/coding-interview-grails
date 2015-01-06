@@ -9,10 +9,10 @@ import interview.Blog
 class BlogFacadeService implements BlogFacade {
 
     @Override
-     List<BlogEntryDTO> getRecentEntries(int n){
+     List<BlogEntryDTO> getRecentEntries(int n){//不正确的缩进
      List<BlogEntryDTO> listDTO=new ArrayList<BlogEntryDTO>();
      List<Blog> list=Blog.list(max:n);
-     for(Blog blog:list){
+     for(Blog blog:list){//使用groovy风格的代码
      listDTO.add(new BlogEntryDTO(
                 title: blog.title,
                 content: blog.content,
