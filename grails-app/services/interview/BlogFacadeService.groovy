@@ -10,16 +10,16 @@ class BlogFacadeService implements BlogFacade {
 
     @Override
     List<BlogEntryDTO> getRecentEntries(int n) {
-        List<BlogEntryDTO> listDTO = new ArrayList<BlogEntryDTO>()
-        List<BlogEntry> list = BlogEntry.list(max: n)
+        def collDTO = []
+        def list = BlogEntry.list(max: n)
         list.each {
-            listDTO.add(new BlogEntryDTO(
+            collDTO << new BlogEntryDTO(
                     title: it.title,
                     content: it.content,
                     dateCreated: it.dateCreated
-            ))
+            )
         }
-        return listDTO//采用Groovy风格改写，使用collect方法改写
+        return collDTO
     }
 
     @Override
