@@ -19,7 +19,7 @@ class BlogFacadeService implements BlogFacade {
                     dateCreated: it.dateCreated
             ))
         }
-        return listDTO
+        return listDTO//采用Groovy风格改写，使用collect方法改写
     }
 
     @Override
