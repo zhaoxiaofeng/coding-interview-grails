@@ -12,7 +12,7 @@ class BlogFacadeService implements BlogFacade {
     List<BlogEntryDTO> getRecentEntries(int n) {
         def collDTO = []
         def list = BlogEntry.list(max: n)
-        list.each {
+        list.each {//仍然没有采用collect方法改写
             collDTO << new BlogEntryDTO(
                     title: it.title,
                     content: it.content,
